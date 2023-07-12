@@ -6,8 +6,15 @@ var app = express();
 //middlewares
 app.use(express.json());
 /* app.use(cors({ origin: 'http://localhost:4200' })); */
-const whiteList=['http://localhost:4200','https://cool-lollipop-6b7729.netlify.app/'];
-app.use(cors({origin: 'https://cool-lollipop-6b7729.netlify.app/'}));
+
+// Configuración de opciones de CORS
+const corsOptions = {
+    origin: ['https://cool-lollipop-6b7729.netlify.app', 'http://localhost:4200'],
+    optionsSuccessStatus: 200,
+};
+  
+// Habilitar CORS en todas las rutas
+app.use(cors(corsOptions));
 
 //Cargamos el modulo de direccionamiento de rutas
 app.use('/api/alumno', require('./routes/alumno.route.js'));
