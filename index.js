@@ -6,7 +6,8 @@ var app = express();
 //middlewares
 app.use(express.json());
 /* app.use(cors({ origin: 'http://localhost:4200' })); */
-app.use(cors({origin: 'https://test-gym-backend.onrender.com'}));
+const whiteList=['http://localhost:4200','https://cool-lollipop-6b7729.netlify.app/'];
+app.use(cors({origin: whiteList}));
 
 //Cargamos el modulo de direccionamiento de rutas
 app.use('/api/alumno', require('./routes/alumno.route.js'));
