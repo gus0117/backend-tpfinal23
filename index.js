@@ -7,7 +7,7 @@ var app = express();
 app.use(express.json());
 /* app.use(cors({ origin: 'http://localhost:4200' })); */
 const whiteList=['http://localhost:4200','https://cool-lollipop-6b7729.netlify.app/'];
-app.use(cors({origin: whiteList}));
+app.use(cors({origin: 'https://cool-lollipop-6b7729.netlify.app/'}));
 
 //Cargamos el modulo de direccionamiento de rutas
 app.use('/api/alumno', require('./routes/alumno.route.js'));
