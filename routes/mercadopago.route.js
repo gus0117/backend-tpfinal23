@@ -8,7 +8,7 @@ mercadopago.configure({
   //access token de prueba de mi cuenta ajsj deberian usar de su cuenta pero fijense si funca 
   access_token: "APP_USR-6274633563174333-071021-e4419b3e7b9687f7d75f6d6200ddaf1c-1420666480"
 })
-router.post("/crearpago", (req, res) => {
+router.post("/crearpago", cors(), (req, res) => {
   /* const { precio, descripcion } = req.body; */
   console.log(req.body.tipo)
   let detalle = []; //Puede ser una lista de insumos o una cuota
@@ -53,7 +53,7 @@ router.post("/crearpago", (req, res) => {
 });
 
 //no funciona, intente con ngrok pero tampoco
-router.post("/notificaciones", async (req, res) => {
+router.post("/notificaciones", cors(), async (req, res) => {
   console.log("######################notificarr####################################");
   const { query } = req
   const topic = query.topic || query.type;
