@@ -25,10 +25,10 @@ router.post("/crearpago", (req, res) => {
 
   let preference = {
     back_urls: {
-      success: "http://localhost:3000/success",
+      success: "https://test-gym-backend.onrender.com/success",
     },
     items: detalle,
-    /* notification_url: "http://localhost:3000/notificaciones", */
+    notification_url: "https://test-gym-backend.onrender.com/notificaciones",
   };
 
   mercadopago.preferences
