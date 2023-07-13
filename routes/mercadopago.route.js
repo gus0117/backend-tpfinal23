@@ -3,6 +3,7 @@ const router = express.Router();
 const mpcontroller = require("../controllers/mercadopago.controller");
 const mercadopago = require("mercadopago");
 const qrCode = require('qrcode');
+const cors = require('cors');
 
 mercadopago.configure({
   //access token de prueba de mi cuenta ajsj deberian usar de su cuenta pero fijense si funca 
